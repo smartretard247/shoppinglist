@@ -13,7 +13,7 @@
     
     include_once 'view/header.php';
     
-    if($_SESSION['valid_user']) :
+    //if($_SESSION['valid_user']) :
         
 	if(empty($_SESSION['admin_enabled'])) $_SESSION['admin_enabled'] = false;
 	if(empty($_SESSION['debug'])) $_SESSION['debug'] = false;
@@ -409,7 +409,3 @@
     
     include 'view/footer.php'; 
 ?>
-   
-<?php else : ?>
-    <b id="error">&nbsp;&nbsp;You do not have permission to view this site.</b><br/>
-<?php include 'view/rightbar.php'; endif; ?>

@@ -1,3 +1,4 @@
+<?php if($_SESSION['valid_user']) : ?>
 <?php $titem = $db->GetByID('items', $item->GetBarcode(), 'Name', 'Barcode'); ?>
 
 Welcome to item_edit! <a href="index.php">Go Back</a><br/><br/>
@@ -62,5 +63,9 @@ Welcome to item_edit! <a href="index.php">Go Back</a><br/><br/>
   </tr>
   </form>
 </table> 
+
+<?php else : ?>
+  <b id="error">&nbsp;&nbsp;You do not have permission to view this site.</b><br/>
+<?php include 'view/rightbar.php'; endif; ?>
 
 <br/><a href="index.php">Go Back</a>

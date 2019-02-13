@@ -1,32 +1,36 @@
-<table><?php if($admin_enabled) : ?>
-  <tr>
-    <td>Add an item:</td>
-    <td><form method="post"><input type="hidden" name="action" value="item_add"/><input value="Go" type="submit"/></form></td> 
-  </tr>
-  <tr>
-    <td>Remove an item:</td>
-    <td><form method="post"><input type="hidden" name="action" value="item_remove"/><input value="Go" type="submit"/></form></td> 
-  </tr>
-  <tr>
-    <td>Add a category:</td>
-    <td><form method="post"><input type="hidden" name="action" value="category_add"/><input value="Go" type="submit"/></form></td>
-  </tr>
-  <tr>
-    <td>View items by isle:</td>
-    <td><form method="post"><input type="hidden" name="action" value="item_show"/><input value="Go" type="submit"/></form></td> 
-  </tr>
-  <tr>
-    <td>View items by barcode:</td>
-    <td><form method="post"><input type="hidden" name="action" value="item_show_barcodes"/><input value="Go" type="submit"/></form></td> 
-  </tr>
-  <tr>
-    <td>View items by category:</td>
-    <td><form method="post"><input type="hidden" name="action" value="item_show_category"/><input value="Go" type="submit"/></form></td> 
-  </tr>
-  <tr>
-    <td>View categories by isle:</td>
-    <td><form method="post"><input type="hidden" name="action" value="item_show_isle"/><input value="Go" type="submit"/></form></td>
-  </tr>
+<table><?php if($admin_enabled) :
+  if($_SESSION['valid_user']) : ?>
+    <tr>
+      <td>Add an item:</td>
+      <td><form method="post"><input type="hidden" name="action" value="item_add"/><input value="Go" type="submit"/></form></td> 
+    </tr>
+    <tr>
+      <td>Remove an item:</td>
+      <td><form method="post"><input type="hidden" name="action" value="item_remove"/><input value="Go" type="submit"/></form></td> 
+    </tr>
+    <tr>
+      <td>Add a category:</td>
+      <td><form method="post"><input type="hidden" name="action" value="category_add"/><input value="Go" type="submit"/></form></td>
+    </tr>
+    <tr>
+      <td>View items by isle:</td>
+      <td><form method="post"><input type="hidden" name="action" value="item_show"/><input value="Go" type="submit"/></form></td> 
+    </tr>
+    <tr>
+      <td>View items by barcode:</td>
+      <td><form method="post"><input type="hidden" name="action" value="item_show_barcodes"/><input value="Go" type="submit"/></form></td> 
+    </tr>
+    <tr>
+      <td>View items by category:</td>
+      <td><form method="post"><input type="hidden" name="action" value="item_show_category"/><input value="Go" type="submit"/></form></td> 
+    </tr>
+    <tr>
+      <td>View categories by isle:</td>
+      <td><form method="post"><input type="hidden" name="action" value="item_show_isle"/><input value="Go" type="submit"/></form></td>
+    </tr>
+  <?php else : ?>
+    <b id="error">&nbsp;&nbsp;You do not have permission to view this site.</b><br/>
+  <?php include 'view/rightbar.php'; endif; ?>
 <?php else : ?>
   <tr>
     <td style="font-size:26px">Add to Shopping List:</td>
